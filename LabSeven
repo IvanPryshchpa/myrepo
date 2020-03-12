@@ -1,0 +1,40 @@
+using System;
+
+namespace LabSeven
+{
+    class Seven
+    {
+        static void Main(string[] args)
+        {
+            string array;
+            Console.WriteLine("Введите строку:");
+            array = Console.ReadLine();
+            Console.WriteLine(IsPalindrom(array));
+            Console.WriteLine(Reverse(array));
+        }
+
+
+        public static bool IsPalindrom(string array)
+        {
+            for (int i = 0, j = array.Length - 1; i < j; i++, j--)
+
+                if (array[i] != array[j])
+
+                    return false;
+
+            return true;
+        }
+
+        static string Reverse(string originalString)
+        {
+            char[] reversedString = new char[originalString.Length];
+
+            for (int i = originalString.Length - 1; i > -1; i--)
+
+                reversedString[originalString.Length - i - 1] = originalString[i];
+
+            return new string(reversedString);
+        }
+
+    }
+}
